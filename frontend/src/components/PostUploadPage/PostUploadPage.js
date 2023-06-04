@@ -1,6 +1,6 @@
 import { useState } from "react";
 import styled from "styled-components";
-import Login from "../Login/Login";
+// import Login from "../Login/Login";
 
 export const PostUploadPage = () => {
   const postInitialData = {
@@ -15,7 +15,6 @@ export const PostUploadPage = () => {
   const [postData, setPostData] = useState(postInitialData);
   const [pdfFileName, setPdfFileName] = useState();
   const [fitFileName, setFitFileName] = useState();
-  const [showLogin, setShowLogin] = useState(false);
   const [showPostConfirmation, setShowPostConfirmation] = useState(false);
 
   const handleChange = (value, name) => {
@@ -63,7 +62,6 @@ export const PostUploadPage = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     if (!isUrlValid(postData.sourceLink)) {
-      // don't submit, link error
       console.log("link wrong don't submit");
     } else {
       try {
@@ -96,17 +94,9 @@ export const PostUploadPage = () => {
     }
   };
 
-  const handleFormClick = () => {
-    setShowLogin(true);
-  };
-
   return (
-    <>
-      {showLogin && <Login />}
-      <Window>
-      <H1>
-        SHARE YOUR PROCESS//PATTERN//WORK
-      </H1>
+    <Window>
+      <H1>SHARE YOUR PROCESS//PATTERN//WORK</H1>
       <Form onSubmit={handleSubmit}>
         <div>
           <Card>
@@ -118,7 +108,6 @@ export const PostUploadPage = () => {
               minLength="5"
               maxLength="20"
               onChange={(ev) => handleChange(ev.target.value, "title")}
-              onClick={handleFormClick}
               required
             />
           </Card>
@@ -199,23 +188,30 @@ export const PostUploadPage = () => {
           </PopUpContent>
         </ConfirmationPopUp>
       )}
-      </Window>
-    </>
+    </Window>
   );
 };
 
-const ConfirmationPopUp = styled.div`
-  z-index: 9999;
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgb(255, 253, 215);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-`;
+const ConfirmationPopUp = ({ closeConfirmation }) => {
+  return (
+    <div>
+      {/* Confirmation popup content */}
+    </div>
+  );
+};
+
+// const ConfirmationPopUp = styled.div`
+//   z-index: 9999;
+//   position: fixed;
+//   top: 0;
+//   left: 0;
+//   width: 100%;
+//   height: 100%;
+//   background-color: rgb(255, 253, 215);
+//   display: flex;
+//   justify-content: center;
+//   align-items: center;
+// `;
 
 const PopUpContent = styled.div`
   background-color: red;

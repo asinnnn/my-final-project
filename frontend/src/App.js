@@ -30,6 +30,9 @@ const App = (props) => {
               <NavMenuItem>
                 <NavLink href="/user/newuser">CREATE</NavLink>
               </NavMenuItem>
+              <NavMenuItem>
+                <NavLink href="/users/bellahadid">USER</NavLink>
+              </NavMenuItem>
             </NavMenu>
           </NavBar>
           {/* Rest of your content */}
