@@ -1,0 +1,28 @@
+{
+  "name": "my-final-project",
+  "version": "1.0.0",
+  "description": "This is the backend app for my final project",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev:backend": "nodemon server.js"
+  },
+  "dependencies": {
+    "@fortawesome/fontawesome-svg-core": "^6.4.0",
+    "@fortawesome/free-regular-svg-icons": "^6.4.0",
+    "@fortawesome/react-fontawesome": "^0.2.0",
+    "@shopify/polaris": "^11.0.1",
+    "bcrypt": "^5.1.0",
+    "body-parser": "^1.20.2",
+    "bson": "^5.3.0",
+    "cors": "^2.8.5",
+    "dotenv": "^8.6.0",
+    "express": "^4.17.1",
+    "moment": "^2.24.0",
+    "mongodb": "^5.5.0",
+    "morgan": "^1.9.1",
+    "nodemon": "^2.0.2",
+    "react-auth-kit": "^2.12.2",
+    "uuid": "^9.0.0"
+  }
+}
